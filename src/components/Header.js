@@ -78,7 +78,7 @@ const Header = (props) => {
     <AppBar elevation={0}>
       <Toolbar>
         <Typography className={classes.title} variant="h5" noWrap>
-          Material-UI
+          Jio+
         </Typography>
         <div className={classes.grow} />
         <div className={classes.sectionDesktop}>

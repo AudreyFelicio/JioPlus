@@ -1,6 +1,7 @@
 import React from 'react';
-import { makeStyles, Grid } from '@material-ui/core';
+import { makeStyles, Grid, Typography, Button } from '@material-ui/core';
 import { orange } from '../Colors';
+import JioPlusHome from '../images/JioPlus-home.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,9 +9,18 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: orange,
     marginTop: '64px',
   },
+  fillerSpace: {
+    height: '36px',
+  },
   content: {
     width: '80%',
     margin: '0 auto',
+  },
+  contentText: {
+    marginTop: '1rem',
+  },
+  tryButton: {
+    marginTop: '1rem',
   },
 }));
 
@@ -19,10 +29,26 @@ const Intro = (props) => {
 
   return (
     <div className={classes.root}>
+      <div className={classes.fillerSpace} />
       <div className={classes.content}>
-        <h1>Hello!</h1>
-        <h1>Hello!</h1>
-        <h1>Hello!</h1>
+        <Grid container spacing={3}>
+          <Grid item xs={6} align="center">
+            <img src={JioPlusHome} style={{height: `calc(100vh - 64px)`}}/>
+          </Grid>
+          <Grid xs={6}>
+            <Typography variant="h2">
+              Hungry and Craving For Food?
+            </Typography>
+            <Typography variant="h3" className={classes.contentText}>
+              Jio+ is a one-stop food ordering solution. We make collating orders and payment collection fuss-free.
+            </Typography>
+            <Button variant="contained" color="secondary" className={classes.tryButton}>
+              <Typography variant="h5">
+                Try Now!
+              </Typography>
+            </Button>
+          </Grid>
+        </Grid>
       </div>
     </div>
   );

@@ -1,36 +1,42 @@
 import { createTheme } from '@material-ui/core';
-import { orange } from './Colors';
+import { orange, darkBlue, white } from './Colors';
 
 export const theme = createTheme({
   palette: {
-    primary: { main: orange },
+    primary: { 
+      main: orange 
+    },
+    secondary: {
+      main: darkBlue,
+      contrastText: white,
+    },
   },
   typography: {
     body1: {
-      fontFamily: 'Monserrat',
+      fontFamily: 'Montserrat',
     },
     button: {
-      fontFamily: 'Monserrat',
-      fontWeight: 800,
-    },
-    h2: {
-      fontFamily: 'Monserrat',
-    },
-    h3: {
       fontFamily: 'Montserrat',
       fontWeight: 800,
     },
+    h1: {
+      fontFamily: 'Montserrat',
+    },
+    h2: {
+      fontFamily: 'Montserrat',
+      fontWeight: 800,
+    },
+    h3: {
+      fontFamily: 'Montserrat',
+    },
     h4: {
-      fontFamily: 'Monserrat',
-      fontWeight: 500,
+      fontFamily: 'Montserrat',
     },
     h5: {
-      fontFamily: 'Monserrat',
-      fontWeight: 500,
+      fontFamily: 'Montserrat',
     },
     body2: {
-      fontFamily: 'Monserrat',
-      fontWeight: 700,
+      fontFamily: 'Montserrat',
     },
   },
   overrides: {
@@ -39,5 +45,10 @@ export const theme = createTheme({
         height: '64px',
       },
     },
+    // MuiButton: {
+    //   root: {
+    //     borderRadius: 25,
+    //   }, 
+    // }, 
   },
 });
