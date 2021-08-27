@@ -33,4 +33,11 @@ export const theme = createTheme({
       fontWeight: 700,
     },
   },
+  overrides: {
+    MuiAppBar: {
+      root: {
+        height: '64px',
+      },
+    },
+  },
 });

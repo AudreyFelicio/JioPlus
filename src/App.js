@@ -1,15 +1,25 @@
 import Header from './components/Header';
-import './App.css';
-import { ThemeProvider } from '@material-ui/core';
+import { ThemeProvider, makeStyles } from '@material-ui/core';
 import { theme } from './Theme';
+import Intro from './components/Intro';
 
-function App() {
+const useStyles = makeStyles((theme) => ({
+  app: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+}));
+
+const App = () => {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <div className={classes.app}>
         <Header />
-      </ThemeProvider>
-    </div>
+        <Intro />
+      </div>
+    </ThemeProvider>
   );
 }
 
