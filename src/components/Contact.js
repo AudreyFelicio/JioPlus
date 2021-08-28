@@ -11,12 +11,21 @@ const useStyles = makeStyles((theme) => ({
     height: '36px',
   },
   content: {
-    width: '60%',
+    width: '80%',
     margin: '0 auto',
     padding: '3rem 0',
+    [theme.breakpoints.up('lg')]: {
+      width: '60%',
+    }
   },
   form: {
     width: '50%',
+    [theme.breakpoints.down('sm')]: {
+      width: '70%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '80%',
+    }
   },
   message: {
     padding: '1rem 0',
@@ -27,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
   },
   submitButton: {
     width: '40%',
+    [theme.breakpoints.down('xs')]: {
+      width: '60%',
+    },
   },
 }));
 
