@@ -27,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
   contentText: {
     padding: '1rem 0',
   },
-  tryButton: {
-    marginTop: '1rem',
-  },
 }));
 
 const Features = (props) => {
