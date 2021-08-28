@@ -19,13 +19,16 @@ const useStyles = makeStyles((theme) => ({
     padding: '3rem 0',
   },
   image: {
-    paddingTop: '1rem',
+    paddingTop: '2rem',
   },
   title: {
-    padding: '1rem 0',
+    padding: '2rem 1rem',
+  },
+  title2: {
+    padding: '0 1rem',
   },
   contentText: {
-    padding: '1rem 0',
+    padding: '2rem 1rem',
   },
   features: {
     [theme.breakpoints.down('xs')]: {
@@ -37,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Features = (props) => {
   const classes = useStyles();
+  const mediumScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
   const smallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   const verySmallScreen = useMediaQuery((theme) => theme.breakpoints.down('xs'));
 
@@ -52,37 +56,69 @@ const Features = (props) => {
           <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
               <img src={Payment} width="200" className={classes.image} alt="payment"/>
-              <Typography variant="h4" className={classes.title}>
-                Payment Tracking
-              </Typography>
+              {mediumScreen && !verySmallScreen ? (
+                <div style={{ margin: '2rem 0' }}>
+                  <Typography variant="h4" className={classes.title2}>
+                    Payment
+                  </Typography>
+                  <Typography variant="h4" className={classes.title2}>
+                    Tracking
+                  </Typography>
+                </div>
+              ) : (
+                <Typography variant="h4" className={classes.title}>
+                  Payment Tracking
+                </Typography>
+              )}
               <Divider />
               <Typography variant="h6" className={classes.contentText}>
-                Jio+ provides automated payment tracking for Paylah.
-                Members can pay within a few clicks and organizers just need to wait and relax.
+                Jio+ handles payments for the organizer, automatically tracking payments made via PayLah.
               </Typography>
             </Paper>
           </Grid>
           <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
               <img src={Share} width="200" className={classes.image} alt="share"/>
-              <Typography variant="h4" className={classes.title}>
-                Easy Sharing
-              </Typography>
+              {mediumScreen && !verySmallScreen ? (
+                <div style={{ margin: '2rem 0' }}>
+                  <Typography variant="h4" className={classes.title2}>
+                    Easy
+                  </Typography>
+                  <Typography variant="h4" className={classes.title2}>
+                    Sharing
+                  </Typography>
+                </div>
+              ) : (
+                <Typography variant="h4" className={classes.title}>
+                  Easy Sharing
+                </Typography>
+              )}
               <Divider />
               <Typography variant="h6" className={classes.contentText}>
-                Jio+ is available on all platforms. Organizers just need to share the link with members.
+                Jio+ is available on all platforms. Organisers and members can access Jio+ with a single link.
               </Typography>
             </Paper>
           </Grid>
           <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
               <img src={ArtificialIntelligence} width="200" className={classes.image} alt="ai"/>
-              <Typography variant="h4" className={classes.title}>
-                AI Detection
-              </Typography>
+              {mediumScreen && !verySmallScreen ? (
+                <div style={{ margin: '2rem 0' }}>
+                  <Typography variant="h4" className={classes.title2}>
+                    AI
+                  </Typography>
+                  <Typography variant="h4" className={classes.title2}>
+                    Detection
+                  </Typography>
+                </div>
+              ) : (
+                <Typography variant="h4" className={classes.title}>
+                  AI Detection
+                </Typography>
+              )}
               <Divider />
               <Typography variant="h6" className={classes.contentText}>
-                Jio+ uses smart custom AI with machine learning to automatically detect prices from receipt.
+                Jio+ combines computer vision with AI to automatically detect prices from a receipt.
               </Typography>
             </Paper>
           </Grid>

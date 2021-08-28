@@ -23,7 +23,10 @@ const useStyles = makeStyles((theme) => ({
   },
   right: {
     marginRight: `calc(10% - 24px)`,
-  }
+  },
+  buttonFeature: {
+    marginRight: '1rem',
+  },
 }));
 
 const Header = (props) => {
@@ -82,12 +85,12 @@ const Header = (props) => {
         <div className={classes.grow} />
         <div className={classes.right}>
           <Button className={classes.buttonFeature} onClick={scrollToFeatures}>
-            <Typography className={classes.title} variant={verySmallScreen ? "h6" : "h4"}>
+            <Typography className={classes.title} variant={verySmallScreen ? "h6" : "h5"}>
               Features
             </Typography>
           </Button>
           <Button className={classes.buttonContact} onClick={scrollToContact}>
-            <Typography className={classes.title} variant={verySmallScreen ? "h6" : "h4"}>
+            <Typography className={classes.title} variant={verySmallScreen ? "h6" : "h5"}>
               Contact Us
             </Typography>
           </Button>

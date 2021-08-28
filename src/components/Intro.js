@@ -37,7 +37,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   container: {
-    paddingBottom: '1rem',
+    paddingBottom: '3rem',
+  },
+  gridText: {
+    [theme.breakpoints.up('lg')]: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      height: '80vh',
+    },
   },
 }));
 
@@ -53,12 +61,12 @@ const Intro = (props) => {
         <Grid item xs={12} align="center">
           <img src={JioPlusHome} className={classes.image} alt="jio+"/>
         </Grid>
-        <Grid xs={12}>
+        <Grid item xs={12}>
           <Typography variant="h3" style={{color: darkBlue, fontWeight: '800'}}>
-            Hungry and Craving For Food?
+            Craving For Food?
           </Typography>
-          <Typography variant="h4" className={classes.contentText}>
-            Jio+ is a one-stop food ordering solution. We make collating orders and payment collection fuss-free.
+          <Typography variant="h5" className={classes.contentText}>
+            Jio+ will change the way you organise group orders. We make collating orders and collecting payments fuss-free.
           </Typography>
         </Grid>
       </Grid>
@@ -71,12 +79,12 @@ const Intro = (props) => {
         <Grid item xs={12} align="center">
           <img src={JioPlusHome} className={classes.image} alt="jio+"/>
         </Grid>
-        <Grid xs={12}>
+        <Grid item xs={12}>
           <Typography variant="h2">
-            Hungry and Craving For Food?
+            Craving For Food?
           </Typography>
           <Typography variant="h3" className={classes.contentText}>
-            Jio+ is a one-stop food ordering solution. We make collating orders and payment collection fuss-free.
+            Jio+ will change the way you organise group orders. We make collating orders and collecting payments fuss-free.
           </Typography>
         </Grid>
       </Grid>
@@ -89,12 +97,12 @@ const Intro = (props) => {
         <Grid item xs={mediumScreen ? 4 : 6} align="center">
           <img src={JioPlusHome} className={classes.image} alt="jio+"/>
         </Grid>
-        <Grid xs={mediumScreen ? 8 : 6}>
+        <Grid item xs={mediumScreen ? 8 : 6} className={classes.gridText}>
           <Typography variant="h2">
-            Hungry and Craving For Food?
+            Craving For Food?
           </Typography>
           <Typography variant={mediumScreen ? "h4" : "h3"} className={classes.contentText}>
-            Jio+ is a one-stop food ordering solution. We make collating orders and payment collection fuss-free.
+            Jio+ will change the way you organise group orders. We make collating orders and collecting payments fuss-free.
           </Typography>
         </Grid>
       </Grid>

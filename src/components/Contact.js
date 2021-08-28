@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     backgroundColor: white,
+    paddingBottom: '1rem',
   },
   fillerSpace: {
     height: '36px',
@@ -77,11 +78,11 @@ const Contact = (props) => {
             className={classes.textField}
             label="Message"
             variant="outlined"
-            minRows="10"
-            multiline="true"
+            minRows={10}
+            multiline={true}
           />
         </Grid>
-        <Grid item xs={12} align="left">
+        <Grid item xs={12} align="right">
           <Button variant="contained" color="secondary" className={classes.submitButton}>
             <Typography variant="h5">
               Submit
@@ -100,8 +101,8 @@ const Contact = (props) => {
             <Typography variant={verySmallScreen ? "h3" : "h2"} className={classes.contact}>
               Contact Us
             </Typography>
-            <Typography variant="h4" className={classes.message}>
-              Interested in Jio+? Feel free to sign up and we will send you our prototype.
+            <Typography variant={verySmallScreen ? "h5" : "h4"} className={classes.message}>
+              Interested in Jio+? Sign up and we'll let you know when our app is ready.
             </Typography>
             <div className={classes.form}>
               {Form()}
