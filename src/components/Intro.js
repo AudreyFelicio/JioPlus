@@ -42,11 +42,11 @@ const Intro = (props) => {
             <Typography variant="h3" className={classes.contentText}>
               Jio+ is a one-stop food ordering solution. We make collating orders and payment collection fuss-free.
             </Typography>
-            <Button variant="contained" color="secondary" className={classes.tryButton}>
+            {/* <Button variant="contained" color="secondary" className={classes.tryButton}>
               <Typography variant="h5">
                 Try Now!
               </Typography>
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
       </div>

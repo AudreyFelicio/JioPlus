@@ -1,13 +1,11 @@
-import Header from './components/Header';
 import { ThemeProvider, makeStyles } from '@material-ui/core';
 import { theme } from './Theme';
 import Intro from './components/Intro';
+import Features from './components/Features';
+import Header from './components/Header';
 
 const useStyles = makeStyles((theme) => ({
-  app: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
+  app: {},
 }));
 
 const App = () => {
@@ -18,6 +16,7 @@ const App = () => {
       <div className={classes.app}>
         <Header />
         <Intro />
+        <Features />
       </div>
     </ThemeProvider>
   );
