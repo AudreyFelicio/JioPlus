@@ -102,7 +102,8 @@ const Contact = (props) => {
               Contact Us
             </Typography>
             <Typography variant={verySmallScreen ? "h5" : "h4"} className={classes.message}>
-              Interested in Jio+? Sign up and we'll let you know when our app is ready.
+              Want to streamline your next group order? 
+              Sign up and we'll let you know when our app is ready.
             </Typography>
             <div className={classes.form}>
               {Form()}
