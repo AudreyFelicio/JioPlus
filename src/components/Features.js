@@ -51,7 +51,7 @@ const Features = (props) => {
           </Grid>
           <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
-              <img src={Payment} width="200" className={classes.image}/>
+              <img src={Payment} width="200" className={classes.image} alt="payment"/>
               <Typography variant="h4" className={classes.title}>
                 Payment Tracking
               </Typography>
@@ -64,7 +64,7 @@ const Features = (props) => {
           </Grid>
           <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
-              <img src={Share} width="200" className={classes.image}/>
+              <img src={Share} width="200" className={classes.image} alt="share"/>
               <Typography variant="h4" className={classes.title}>
                 Easy Sharing
               </Typography>
@@ -76,7 +76,7 @@ const Features = (props) => {
           </Grid>
           <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
-              <img src={ArtificialIntelligence} width="200" className={classes.image}/>
+              <img src={ArtificialIntelligence} width="200" className={classes.image} alt="ai"/>
               <Typography variant="h4" className={classes.title}>
                 AI Detection
               </Typography>

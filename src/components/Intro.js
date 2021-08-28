@@ -51,7 +51,7 @@ const Intro = (props) => {
     return (
       <Grid container spacing={3} className={classes.container}>
         <Grid item xs={12} align="center">
-          <img src={JioPlusHome} className={classes.image} />
+          <img src={JioPlusHome} className={classes.image} alt="jio+"/>
         </Grid>
         <Grid xs={12}>
           <Typography variant="h3" style={{color: darkBlue, fontWeight: '800'}}>
@@ -69,7 +69,7 @@ const Intro = (props) => {
     return (
       <Grid container spacing={3} className={classes.container}>
         <Grid item xs={12} align="center">
-          <img src={JioPlusHome} className={classes.image} />
+          <img src={JioPlusHome} className={classes.image} alt="jio+"/>
         </Grid>
         <Grid xs={12}>
           <Typography variant="h2">
@@ -87,7 +87,7 @@ const Intro = (props) => {
     return (
       <Grid container spacing={3} className={classes.container}>
         <Grid item xs={mediumScreen ? 4 : 6} align="center">
-          <img src={JioPlusHome} className={classes.image} />
+          <img src={JioPlusHome} className={classes.image} alt="jio+"/>
         </Grid>
         <Grid xs={mediumScreen ? 8 : 6}>
           <Typography variant="h2">
