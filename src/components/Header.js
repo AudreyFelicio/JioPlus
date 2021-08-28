@@ -4,7 +4,8 @@ import {
   Toolbar,
   Typography,
   Button,
-  makeStyles
+  makeStyles,
+  useMediaQuery
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 const Header = (props) => {
   const classes = useStyles();
   const [elevation, setElevation] = useState(0);
+  const verySmallScreen = useMediaQuery((theme) => theme.breakpoints.down('xs'));
 
   const handleScroll = () => {
     const newY = window.scrollY;
@@ -72,7 +74,7 @@ const Header = (props) => {
       <Toolbar>
         <div className={classes.left}>
           <Button className={classes.buttonTitle} onClick={scrollToTop}>
-            <Typography className={classes.title} variant="h4">
+            <Typography className={classes.title} variant={verySmallScreen ? "h6" : "h4"}>
               Jio+
             </Typography>
           </Button>
@@ -80,12 +82,12 @@ const Header = (props) => {
         <div className={classes.grow} />
         <div className={classes.right}>
           <Button className={classes.buttonFeature} onClick={scrollToFeatures}>
-            <Typography className={classes.title} variant="h4">
+            <Typography className={classes.title} variant={verySmallScreen ? "h6" : "h4"}>
               Features
             </Typography>
           </Button>
           <Button className={classes.buttonContact} onClick={scrollToContact}>
-            <Typography className={classes.title} variant="h4">
+            <Typography className={classes.title} variant={verySmallScreen ? "h6" : "h4"}>
               Contact Us
             </Typography>
           </Button>
