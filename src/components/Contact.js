@@ -74,7 +74,7 @@ const Contact = (props) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="contact-us">
       <div className={classes.content}>
         <Grid container spacing={3}>
           <Grid item xs={12} align="center">

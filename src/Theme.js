@@ -18,6 +18,7 @@ export const theme = createTheme({
     button: {
       fontFamily: 'Montserrat',
       fontWeight: 800,
+      textTransform: 'none',
     },
     h1: {
       fontFamily: 'Montserrat',
@@ -46,7 +47,7 @@ export const theme = createTheme({
   overrides: {
     MuiAppBar: {
       root: {
-        height: '64px',
+        height: '80px',
       },
     },
     // MuiButton: {

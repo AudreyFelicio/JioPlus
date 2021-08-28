@@ -33,7 +33,7 @@ const Features = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="features">
       <div className={classes.content}>
         <Grid container spacing={3}>
           <Grid item xs={12} align="center">

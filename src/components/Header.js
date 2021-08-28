@@ -1,89 +1,94 @@
-import React from 'react';
-import { 
-  alpha,
+import React, { useEffect, useState } from 'react';
+import {
   AppBar,
   Toolbar,
   Typography,
+  Button,
   makeStyles
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
+  appBar: {
+    paddingTop: '10px',
+  },
+  left: {
+    marginLeft: `calc(10% - 24px)`,
+  },
+  title: {
+    fontWeight: '800',
+  },
   grow: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
+  right: {
+    marginRight: `calc(10% - 24px)`,
+  }
 }));
 
 const Header = (props) => {
   const classes = useStyles();
+  const [elevation, setElevation] = useState(0);
+
+  const handleScroll = () => {
+    const newY = window.scrollY;
+    if (newY === 0) {
+      setElevation(0);
+    } else {
+      setElevation(4);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollToFeatures = () => {
+    const features = document.getElementById("features");
+    const scrollDistance = features.getBoundingClientRect().top + window.pageYOffset - 50;
+    window.scroll({
+      top: scrollDistance,
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollToContact = () => {
+    const contact = document.getElementById("contact-us");
+    const scrollDistance = contact.getBoundingClientRect().top + window.pageYOffset;
+    window.scroll({
+      top: scrollDistance,
+      behavior: 'smooth',
+    });
+  };
 
   return (
-    <AppBar elevation={0}>
+    <AppBar elevation={elevation} className={classes.appBar}>
       <Toolbar>
-        <Typography className={classes.title} variant="h5" noWrap>
-          Jio+
-        </Typography>
-        <div className={classes.grow} />
-        <div className={classes.sectionDesktop}>
+        <div className={classes.left}>
+          <Button className={classes.buttonTitle} onClick={scrollToTop}>
+            <Typography className={classes.title} variant="h4">
+              Jio+
+            </Typography>
+          </Button>
         </div>
-        <div className={classes.sectionMobile}>
+        <div className={classes.grow} />
+        <div className={classes.right}>
+          <Button className={classes.buttonFeature} onClick={scrollToFeatures}>
+            <Typography className={classes.title} variant="h4">
+              Features
+            </Typography>
+          </Button>
+          <Button className={classes.buttonContact} onClick={scrollToContact}>
+            <Typography className={classes.title} variant="h4">
+              Contact Us
+            </Typography>
+          </Button>
         </div>
       </Toolbar>
     </AppBar>
