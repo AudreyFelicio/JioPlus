@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles, Grid, Typography, TextField, Button } from '@material-ui/core';
-import { white } from '../Colors';
+import { makeStyles, Grid, Typography, TextField, Button, useMediaQuery } from '@material-ui/core';
+import { darkBlue, white } from '../Colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,10 +40,17 @@ const useStyles = makeStyles((theme) => ({
       width: '60%',
     },
   },
+  contact: {
+    [theme.breakpoints.down('xs')]: {
+      fontWeight: 800,
+      color: darkBlue,
+    },
+  },
 }));
 
 const Contact = (props) => {
   const classes = useStyles();
+  const verySmallScreen = useMediaQuery((theme) => theme.breakpoints.down('xs'));
 
   const Form = () => {
     return (
@@ -90,7 +97,7 @@ const Contact = (props) => {
       <div className={classes.content}>
         <Grid container spacing={3}>
           <Grid item xs={12} align="center">
-            <Typography variant="h2">
+            <Typography variant={verySmallScreen ? "h3" : "h2"} className={classes.contact}>
               Contact Us
             </Typography>
             <Typography variant="h4" className={classes.message}>

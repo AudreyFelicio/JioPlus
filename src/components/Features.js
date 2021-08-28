@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, makeStyles, Typography, Paper, Divider } from '@material-ui/core';
-import { orange, white, blue } from '../Colors';
+import { Grid, makeStyles, Typography, Paper, Divider, useMediaQuery } from '@material-ui/core';
+import { white, darkBlue } from '../Colors';
 import ArtificialIntelligence from '../images/ai.svg';
 import Share from '../images/share.svg';
 import Payment from '../images/payment.svg';
@@ -27,21 +27,29 @@ const useStyles = makeStyles((theme) => ({
   contentText: {
     padding: '1rem 0',
   },
+  features: {
+    [theme.breakpoints.down('xs')]: {
+      fontWeight: 800,
+      color: darkBlue,
+    },
+  },
 }));
 
 const Features = (props) => {
   const classes = useStyles();
+  const smallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  const verySmallScreen = useMediaQuery((theme) => theme.breakpoints.down('xs'));
 
   return (
     <div className={classes.root} id="features">
       <div className={classes.content}>
         <Grid container spacing={3}>
           <Grid item xs={12} align="center">
-            <Typography variant="h2">
+            <Typography variant={verySmallScreen ? "h3" : "h2"} className={classes.features}>
               Features
             </Typography>
           </Grid>
-          <Grid item xs={4} align="center">
+          <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
               <img src={Payment} width="200" className={classes.image}/>
               <Typography variant="h4" className={classes.title}>
@@ -54,7 +62,7 @@ const Features = (props) => {
               </Typography>
             </Paper>
           </Grid>
-          <Grid item xs={4} align="center">
+          <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
               <img src={Share} width="200" className={classes.image}/>
               <Typography variant="h4" className={classes.title}>
@@ -66,7 +74,7 @@ const Features = (props) => {
               </Typography>
             </Paper>
           </Grid>
-          <Grid item xs={4} align="center">
+          <Grid item xs={verySmallScreen ? 12 : smallScreen ? 6 : 4} align="center">
             <Paper elevation={3}>
               <img src={ArtificialIntelligence} width="200" className={classes.image}/>
               <Typography variant="h4" className={classes.title}>
